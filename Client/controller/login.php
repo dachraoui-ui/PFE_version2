@@ -7,7 +7,9 @@
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    
+    
+    font-family: 'Open Sans', sans-serif;
     background-image: url('../../../../Upload/imgs/test.jpg');
     background-size: cover;
     background-position: center;
@@ -64,9 +66,16 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
+.btn{
+    margin-top: 10px;
 
+}
+.form-row{
+    margin-bottom: 10px;
+
+}
 label {
     font-weight: bold;
     color: #495057;
@@ -88,10 +97,9 @@ label {
     border: none;
     border-radius: 5px;
     text-align: center;
-
-    
+    font-size: large;
     position: relative;
-    left: 125px; 
+    left: 110px; 
     top: -1px;  
 }
 
