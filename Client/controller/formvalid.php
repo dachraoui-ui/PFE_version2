@@ -27,7 +27,7 @@ $donneesFormulaire = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <style>
         body {
-            margin: 0;
+            
             overflow: hidden;
             height: 100vh;
             font-family: 'Open Sans', sans-serif;
@@ -84,26 +84,26 @@ $donneesFormulaire = $stmt->fetch(PDO::FETCH_ASSOC);
             flex-direction: row;
             margin-top: 20px;
             /* Add some space above the buttons */
-            gap: 10px;
+            gap: 15px;
             /* Add some space between the buttons */
         }
 
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+        
 
         button:hover {
             background-color: #0056b3;
         }
+        .btn{
+           
+            height: 45px;
+            
+        }
         a:hover{
             text-decoration: none;
             color: white;
+            transform: scale(1.05);
+            /* Increase the size of the button to 105% when hovered */
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 

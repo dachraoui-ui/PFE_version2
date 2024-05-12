@@ -36,12 +36,12 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
 
         .container {
             opacity: 0.9;
-            max-width: 1000px;
+            max-width: 700px;
             margin: 0 auto;
             background-color: #f8f8f8;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
+            border-radius: 7px;
             margin-top: 50px;
         }
 
@@ -65,6 +65,12 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            
+        }
+        button:hover{
+            transform: scale(1.05);
+            /* Increase the size of the button to 105% when hovered */
+            transition: transform 0.3s ease-in-out;
         }
         
 
