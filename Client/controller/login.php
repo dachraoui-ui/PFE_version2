@@ -7,8 +7,6 @@
 
 
 body {
-    
-    
     font-family: 'Open Sans', sans-serif;
     background-image: url('../../../../Upload/imgs/test.jpg');
     background-size: cover;

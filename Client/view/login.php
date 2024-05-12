@@ -25,9 +25,12 @@
 
         .custom-heading span {
             cursor: pointer;
-           
+            transition: color 0.3s ease-in-out;
         }
 
+        .custom-heading span:hover {
+            color: #dc3545;
+        }
         
         .link-style {
             color: blue;
@@ -37,16 +40,6 @@
     max-width: 400px;
     margin: 0 auto;
 }
-span:nth-child(2) {
-
-    color: #00bf8e;
-}
-.btn {
-    transition: transform 0.3s ease;
-}
-.btn:hover{
-    transform: scale(1.1);
-}
     </style>
 </head>
 <body>
@@ -54,32 +47,33 @@ span:nth-child(2) {
 <div class="container">
     <div class="body-page">
         <h1 class="custom-heading">
-         <strong><span class="text-primary" data-value="Connexion">Connexion</span> - <span class="text-primary" data-value="Inscription" >Inscription</span></strong>
+         <strong>   <span class="text-primary" data-value="Connexion">Connexion</span> - <span class="text-success" data-value="Inscription">Inscription</span></strong>
         </h1>
 
         <div class="cnx my-5">
-    <div class="frm-cnx col-md-6 mx-auto shadow-box">
-        <form class="cnx" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
-            <div class="form-group row">
-                <label for="mail" class="col-sm-4 col-form-label">Email :</label>
-                <div class="col-sm-8">
-                    <input type="email" class="form-control" required name="mail" id="mail">
-                </div>
+            <div class="frm-cnx col-md-6 mx-auto">
+                <form class="cnx" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+                    <div class="form-group row">
+                        <label for="mail" class="col-sm-4 col-form-label">Email :</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" required name="mail" id="mail">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="pass" class="col-sm-4 col-form-label">Mot de passe :</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control" required name="pass" id="pass">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-8">
+                            <input type="submit" name="cnx" value="Connexion" class="btn btn-primary btn-block">
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-group row">
-                <label for="pass" class="col-sm-4 col-form-label">Mot de passe :</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control" required name="pass" id="pass">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-sm-8">
-                    <input type="submit" name="cnx" value="Connexion" class="btn btn-primary btn-block">
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
 
         <div class="ins my-5">
             <div class="frm-ins col-md-6 mx-auto">
@@ -124,8 +118,6 @@ span:nth-child(2) {
     }
 
     document.getElementById("nosLink").addEventListener("click", redirectToProduct);
-   
-
 </script>
 <script>
 
@@ -145,7 +137,7 @@ span:nth-child(2) {
                     return letters[Math.floor(Math.random() * 26)];
                 })
                 .join("");
-                if(iterations >= 11) clearInterval(interval);
+                if(iterations >= 9) clearInterval(interval);
                 iterations+= 1 / 2;
             }, 50);
         };

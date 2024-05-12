@@ -12,25 +12,35 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impression du Formulaire PFE</title>
+    <link rel="stylesheet" href="../../Administrator/Design/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
     <style>
         body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('../../../../Upload/imgs/test.jpg');
+            background-size: cover;
+            background-position: center;
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
             text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .container {
+            opacity: 0.9;
             max-width: 1000px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background-color: #f8f8f8;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             margin-top: 50px;
         }
@@ -56,16 +66,18 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
             border-radius: 5px;
             cursor: pointer;
         }
+        
+
         @media print {
-        button {
-            display: none;
+            button {
+                display: none;
+            }
         }
-    }
     </style>
-     <script>
+    <script>
         function imprimerPage() {
             // Redirection vers la page de formulaire après un délai de 3 secondes
-            setTimeout(function () {
+            setTimeout(function() {
                 window.location.href = 'formvalid.php';
             }, 3000);
 
@@ -74,6 +86,7 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
         }
     </script>
 </head>
+
 <body>
     <div class="container">
         <!-- Affichez les données du formulaire ici -->
@@ -89,8 +102,9 @@ $donneesFormulaire = $result->fetch(PDO::FETCH_ASSOC);
             <li><strong>Encadreur de l'Entreprise:</strong> <?php echo $donneesFormulaire['encadreurEntreprise']; ?></li>
         </ul><br>
 
-        <button onclick="imprimerPage()">Imprimer</button>
+        <button class="btn btn-success" type="button" onclick="imprimerPage()">Imprimer</button>
     </div>
-    
+
 </body>
+
 </html>
