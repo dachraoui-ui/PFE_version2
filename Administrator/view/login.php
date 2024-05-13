@@ -1,4 +1,12 @@
-<style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <title>Login Page</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -6,7 +14,9 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+
+            
+            font-family: 'Open Sans', sans-serif;
             background-image: url('../../Upload/imgs/test.jpg');
             background-size: cover;
             background-position: center;
@@ -27,23 +37,20 @@
         }
 
         .card-body {
+            opacity: 0.9;
+            height: 350px;
             background-color: #F8F9F9; 
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
         }
 
         .body-page h1 {
             cursor: pointer;
         }
-    </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        /* ... Votre CSS ici ... */
+        .btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>

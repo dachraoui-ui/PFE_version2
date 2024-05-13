@@ -46,23 +46,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
     <title>Formulaire CSS</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
             height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('../../../../Upload/imgs/test.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
 
         .form-container {
+            opacity: 0.9;
             background-color: #fff;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 300px;
         }
@@ -95,10 +101,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #fff;
             border: none;
             cursor: pointer;
+            font-size: large;
         }
 
-        .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
+        
+        h2 {
+            color: #007bff;
+            text-align: center;
+        }
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
