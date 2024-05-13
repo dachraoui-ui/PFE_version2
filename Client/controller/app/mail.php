@@ -15,7 +15,6 @@ $mail = new PHPMailer();
     $mail->Password   = 'jwwg nlha vcra ejfa';                   
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
     $mail->Port       = 465;                                   
-    
     $mail->isHTML(true);       
     $mail->CharSet = "UTF-8"; 
 

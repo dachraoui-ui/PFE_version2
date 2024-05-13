@@ -25,45 +25,8 @@ $mail->send();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Verification</title>
-</head>
-<body>                                  
-   <br><br><br><br><br><br><br><br><br><br>
-    <form id="verificationForm" method="post" action="test.php">
-        <label for="code_utilisateur">Code de verification :</label><br>
-        
-        <input type="text" id="code_utilisateur" name="code_utilisateur" required>
-        <div id="error-message" style="color: red;"></div>
-        <a href="#" onclick="location.reload();">renvoyer le code</a><br><br>
-        <button type="button" onclick="verifyCode()">Verify Code</button><br>
-       
-    </form>
-
-   
-
-    <script>
-        function verifyCode() {
-            var enteredCode = document.getElementById('code_utilisateur').value;
-            var errorMessage = document.getElementById('error-message');
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'test.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    if (xhr.responseText.trim() === 'correct') {
-                        window.location.href = 'inserer.php';
-                    } else {
-                        errorMessage.innerHTML = 'Code incorrect. Veuillez réessayer.';
-                    }
-                }
-            };
-            xhr.send('code_utilisateur=' + enteredCode);
-        }
-    </script>
-</body>
-</html>
-
-<style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -71,7 +34,8 @@ $mail->send();
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+           
             background-image: url('../../../../Upload/imgs/test.jpg');
             background-size: cover;
             background-position: center;
@@ -134,4 +98,52 @@ $mail->send();
             background-color: #007bff;
             color: #fff;
         }
+        button:hover {
+            
+            transform: scale(1.05);
+            /* Increase the size of the button to 105% when hovered */
+            transition: transform 0.3s ease-in-out;
+        }
+        a{
+            color: #007bff;
+            text-decoration: none;
+        }
     </style>
+</head>
+<body>                                  
+   <br><br><br><br><br><br><br><br><br><br>
+    <form id="verificationForm" method="post" action="test.php">
+        <label for="code_utilisateur">Code de verification :</label><br>
+        
+        <input type="text" id="code_utilisateur" name="code_utilisateur" required>
+        <div id="error-message" style="color: red;"></div>
+        <a href="#" onclick="location.reload();">renvoyer le code</a><br><br>
+        <button type="button" onclick="verifyCode()">Verify Code</button><br>
+       
+    </form>
+
+   
+
+    <script>
+        function verifyCode() {
+            var enteredCode = document.getElementById('code_utilisateur').value;
+            var errorMessage = document.getElementById('error-message');
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'test.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (xhr.responseText.trim() === 'correct') {
+                        window.location.href = 'inserer.php';
+                    } else {
+                        errorMessage.innerHTML = 'Code incorrect. Veuillez réessayer.';
+                    }
+                }
+            };
+            xhr.send('code_utilisateur=' + enteredCode);
+        }
+    </script>
+</body>
+</html>
+

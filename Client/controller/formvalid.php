@@ -87,9 +87,6 @@ $donneesFormulaire = $stmt->fetch(PDO::FETCH_ASSOC);
             gap: 15px;
             /* Add some space between the buttons */
         }
-
-        
-
         button:hover {
             background-color: #0056b3;
         }
